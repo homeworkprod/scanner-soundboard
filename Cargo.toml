@@ -1,0 +1,20 @@
+[package]
+name = "scanner-soundboard"
+version = "0.1.0"
+authors = ["Jochen Kupperschmidt"]
+edition = "2018"
+description = "Trigger sounds via RFID tags or barcodes"
+readme = "README.md"
+homepage = "https://homework.nwsnet.de/releases/9b23/#scanner-soundboard"
+repository = "https://github.com/homeworkprod/scanner-soundboard"
+license = "MIT"
+keywords = ["audio", "barcode", "rfid"]
+categories = ["command-line-utilities", "multimedia::audio"]
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "2.33.3", default-features = false }
+evdev = { version = "0.11.1" }
+rodio = { version = "0.14", default-features = false, features = ["mp3", "vorbis"] }
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.5.8"

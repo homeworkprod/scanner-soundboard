@@ -1,0 +1,6 @@
+sounds_path = "sounds"
+
+[inputs_to_filenames]
+"0000000001" = "sound001.ogg"
+"0000000002" = "sound002.ogg"
+"0000000003" = "sound003.ogg"
