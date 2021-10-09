@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Version 0.1.1 (unreleased)
+## Version 0.1.1 (2021-10-09)
 
 - Fix license file to actually contain the MIT license.
 
