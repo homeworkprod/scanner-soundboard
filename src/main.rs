@@ -4,7 +4,7 @@
  */
 
 use anyhow::Result;
-use clap::{crate_authors, crate_version, App, Arg, ArgMatches};
+use clap::{crate_authors, crate_description, crate_version, App, Arg, ArgMatches};
 use evdev::{Device, EventType, InputEventKind, Key};
 use rodio::{Decoder, OutputStream, Sink};
 use serde::Deserialize;
@@ -21,9 +21,10 @@ struct Config {
 }
 
 fn parse_args() -> ArgMatches<'static> {
-    App::new("RFID Soundboard")
+    App::new("Scanner Soundboard")
         .author(crate_authors!())
         .version(crate_version!())
+        .about(crate_description!())
         .arg(
             Arg::with_name("config")
                 .short("c")
