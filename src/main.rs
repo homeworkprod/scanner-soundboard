@@ -74,17 +74,14 @@ fn play_sound(
     dir: &Path,
     sink: &Sink,
 ) -> Result<()> {
-    match inputs_to_filenames.get(input.trim()) {
-        Some(filename) => {
-            let path = dir.join(filename);
-            if !&path.exists() {
-                eprintln!("Sound file {} does not exist.", path.display());
-                return Ok(());
-            }
-            let source = load_source(&path)?;
-            sink.append(source);
+    if let Some(filename) = inputs_to_filenames.get(input.trim()) {
+        let path = dir.join(filename);
+        if !&path.exists() {
+            eprintln!("Sound file {} does not exist.", path.display());
+            return Ok(());
         }
-        _ => (),
+        let source = load_source(&path)?;
+        sink.append(source);
     }
     Ok(())
 }
@@ -140,10 +137,9 @@ fn main() -> Result<()> {
                     read_chars.clear();
                 }
                 InputEventKind::Key(key) => {
-                    match get_char(key) {
-                        Some(ch) => read_chars.push(ch),
-                        None => (),
-                    };
+                    if let Some(ch) = get_char(key) {
+                        read_chars.push(ch)
+                    }
                 }
                 _ => (),
             }
