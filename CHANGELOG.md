@@ -9,6 +9,8 @@
 
 - Updated rodio to v0.15.
 
+- Updated toml to v0.5.9.
+
 
 ## Version 0.1.1 (2021-10-09)
 
