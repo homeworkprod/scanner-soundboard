@@ -1,6 +1,6 @@
 [package]
 name = "scanner-soundboard"
-version = "0.1.1"
+version = "0.2.0-dev"
 authors = ["Jochen Kupperschmidt"]
 edition = "2018"
 description = "Trigger sounds via RFID tags or barcodes"

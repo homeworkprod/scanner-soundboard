@@ -1,7 +1,7 @@
 # Changelog
 
 
-## Version 0.1.2 (unreleased)
+## Version 0.2.0 (unreleased)
 
 - Include `Cargo.lock`.
 
