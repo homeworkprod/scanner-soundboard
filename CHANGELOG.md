@@ -5,6 +5,8 @@
 
 - Included `Cargo.lock`.
 
+- Updated evdev to v0.11.4.
+
 
 ## Version 0.1.1 (2021-10-09)
 
