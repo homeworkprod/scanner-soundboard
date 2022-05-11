@@ -13,7 +13,7 @@ categories = ["command-line-utilities", "multimedia::audio"]
 
 [dependencies]
 anyhow = "1.0"
-clap = { version = "2.33.3", default-features = false }
+clap = { version = "3.1.18", default-features = false, features = ["derive", "std"] }
 evdev = { version = "0.11.4" }
 rodio = { version = "0.15", default-features = false, features = ["mp3", "vorbis"] }
 serde = { version = "1.0", features = ["derive"] }

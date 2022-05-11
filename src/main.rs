@@ -4,7 +4,7 @@
  */
 
 use anyhow::Result;
-use clap::{crate_authors, crate_description, crate_version, App, Arg, ArgMatches};
+use clap::Parser;
 use evdev::{Device, EventType, InputEventKind, Key};
 use rodio::{Decoder, OutputStream, Sink};
 use serde::Deserialize;
@@ -20,30 +20,21 @@ struct Config {
     inputs_to_filenames: HashMap<String, String>,
 }
 
-fn parse_args() -> ArgMatches<'static> {
-    App::new("Scanner Soundboard")
-        .author(crate_authors!())
-        .version(crate_version!())
-        .about(crate_description!())
-        .arg(
-            Arg::with_name("config")
-                .short("c")
-                .long("config")
-                .help("Specify configuration file (e.g. `config.toml`)")
-                .required(true)
-                .takes_value(true)
-                .value_name("FILE"),
-        )
-        .arg(
-            Arg::with_name("input_device")
-                .short("i")
-                .long("input-device")
-                .help("Specify input device (e.g. `/dev/input/event23`)")
-                .required(true)
-                .takes_value(true)
-                .value_name("DEVICE"),
-        )
-        .get_matches()
+/// Command-line arguments
+#[derive(Parser, Debug)]
+#[clap(about, author, version)]
+struct Args {
+    /// Specify configuration filename (e.g. `config.toml`)
+    #[clap(short = 'c', long = "config")]
+    config_filename: PathBuf,
+
+    /// Specify input device (e.g. `/dev/input/event23`)
+    #[clap(short = 'i', long = "input-device")]
+    input_device: String,
+}
+
+fn parse_args() -> Args {
+    Args::parse()
 }
 
 fn load_config(path: &Path) -> Result<Config> {
@@ -94,16 +85,14 @@ fn load_source(path: &Path) -> Result<Decoder<BufReader<File>>> {
 fn main() -> Result<()> {
     let args = parse_args();
 
-    let config_filename = args.value_of("config").map(Path::new).unwrap();
-    let config = load_config(config_filename)?;
+    let config = load_config(&args.config_filename)?;
 
     let (_stream, stream_handle) = OutputStream::try_default().unwrap();
     let sink = Sink::try_new(&stream_handle).unwrap();
 
     sink.sleep_until_end();
 
-    let input_device_path = args.value_of("input_device").unwrap();
-    let mut input_device = Device::open(input_device_path)?;
+    let mut input_device = Device::open(&args.input_device)?;
     println!(
         "Opened input device \"{}\".",
         input_device.name().unwrap_or("unnamed device")

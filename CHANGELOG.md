@@ -5,6 +5,8 @@
 
 - Included `Cargo.lock`.
 
+- Updated clap to v3.1.18, use derive feature.
+
 - Updated evdev to v0.11.4.
 
 - Updated rodio to v0.15.
