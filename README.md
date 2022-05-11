@@ -11,8 +11,8 @@ I originally developed this to play insider jokes as custom sounds
 (generated via text-to-speech engines) during regular internal evenings
 of [Among Us](https://www.innersloth.com/games/among-us/) games. The
 sounds are triggered by placing 3D-printed Among Us figurines (glued to
-credit card-size RFID tags) on a cheap (~12 €) USB RFID reader, itself
-covered by a 3D-printed plan of a map from the game.
+coin-size RFID tags) on a cheap (~12 €) USB RFID reader, itself covered
+by a 3D-printed plan of a map from the game.
 
 
 ## Usage
