@@ -3,6 +3,8 @@
 
 ## Version 0.2.0 (unreleased)
 
+- Split code into several modules.
+
 - Included `Cargo.lock`.
 
 - Updated clap to v3.1.18, use derive feature.
