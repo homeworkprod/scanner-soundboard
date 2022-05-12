@@ -2,7 +2,7 @@
 name = "scanner-soundboard"
 version = "0.2.0-dev"
 authors = ["Jochen Kupperschmidt"]
-edition = "2018"
+edition = "2021"
 description = "Trigger sounds via RFID tags or barcodes"
 readme = "README.md"
 homepage = "https://homework.nwsnet.de/releases/9b23/#scanner-soundboard"

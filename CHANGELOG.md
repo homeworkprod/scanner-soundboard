@@ -13,6 +13,8 @@
 
 - Updated toml to v0.5.9.
 
+- Switched to Rust Edition 2021.
+
 
 ## Version 0.1.1 (2021-10-09)
 
