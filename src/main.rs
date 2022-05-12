@@ -1,6 +1,6 @@
 /*
- * Copyright 2021 Jochen Kupperschmidt
- * License: MIT (see file `LICENSE` for details)
+ * Copyright 2021-2022 Jochen Kupperschmidt
+ * License: MIT
  */
 
 use anyhow::Result;
