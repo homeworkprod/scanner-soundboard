@@ -50,3 +50,8 @@ features in `Cargo.toml` and require recompilation of the program.
 ## License
 
 Scanner Soundboard is licensed under the MIT license.
+
+
+## Author
+
+Scanner Soundboard was created by Jochen Kupperschmidt.
