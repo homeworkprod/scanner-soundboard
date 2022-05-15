@@ -1,7 +1,7 @@
 # Changelog
 
 
-## 0.2.0 (unreleased)
+## 0.2.0 (2022-05-16)
 
 - Split code into several modules.
 
